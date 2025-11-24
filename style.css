@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: radial-gradient(circle at center, #ff0000 0%, #8b0000 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator {
+    background: linear-gradient(145deg, #c41e3a 0%, #8b0000 100%);
+    border-radius: 30px;
+    padding: 25px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: left;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    opacity: 0.90;
+}
+
+.display-container {
+    background: linear-gradient(145deg, #1a1a1a 0%, #000000 100%);
+    border-radius: 20px;
+    padding: 25px 20px;
+    margin-bottom: 25px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 
+        inset 0 4px 10px rgba(0, 0, 0, 0.8),
+        0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.memory-indicator {
+    color: #888;
+    font-size: 11px;
+    text-align: left;
+    margin-bottom: 5px;
+    min-height: 15px;
+}
+
+.history {
+    color: #666;
+    font-size: 14px;
+    text-align: right;
+    margin-bottom: 8px;
+    min-height: 18px;
+}
+
+.display {
+    color: white;
+    font-size: 42px;
+    text-align: right;
+    font-weight: 300;
+    word-wrap: break-word;
+    letter-spacing: 2px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+button {
+    background: linear-gradient(145deg, #d32f2f 0%, #b71c1c 100%);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    box-shadow: 
+        0 8px 15px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 20px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.special {
+    background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+    font-size: 18px;
+}
+
+.operator {
+    background: linear-gradient(145deg, #d32f2f 0%, #b71c1c 100%);
+    font-size: 26px;
+}
+
+.zero {
+    grid-column: span 1;
+}
+
+.equals {
+    background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 35px;
+    width: 155px;
+    grid-column: span 2;
+    font-size: 28px;
+}
+
+.memory-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.memory {
+    background: linear-gradient(145deg, #8b0000 0%, #660000 100%);
+    font-size: 16px;
+    border-radius: 15px;
+    height: 45px;
+    width: 100%;
+}
+
+.history-panel {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 15px;
+    max-height: 180px;
+    overflow-y: auto;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.history-title {
+    color: white;
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.history-item {
+    color: #ccc;
+    font-size: 11px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-panel::-webkit-scrollbar {
+    width: 5px;
+}
+
+.history-panel::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.history-panel::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        max-width: 100%;
+        padding: 20px;
+    }
+    
+    .logo {
+        font-size: 16px;
+    }
+    
+    .display {
+        font-size: 36px;
+    }
+
+    button {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .equals {
+        width: 135px;
+    }
+
+    .buttons {
+        gap: 12px;
+    }
+}

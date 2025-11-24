@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCalc - Kalkulator Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="logo">MyCalc</div>
+        
+        <div class="display-container">
+            <div class="memory-indicator" id="memoryIndicator"></div>
+            <div class="history" id="historyDisplay"></div>
+            <div class="display" id="display">0</div>
+        </div>
+
+        <div class="buttons">
+            <button class="special" onclick="clearAll()">AC</button>
+            <button class="operator" onclick="toggleSign()">+/−</button>
+            <button class="operator" onclick="percentage()">%</button>
+            <button class="operator" onclick="setOperator('/')">÷</button>
+
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="setOperator('*')">×</button>
+
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="operator" onclick="setOperator('-')">−</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="operator" onclick="setOperator('+')">+</button>
+
+            <button class="zero" onclick="appendNumber('0')">0</button>
+            <button onclick="appendDecimal()">,</button>
+            <button class="equals" onclick="calculate()">=</button>
+        </div>
+
+        <div class="memory-buttons">
+            <button class="memory" onclick="memoryAdd()">M+</button>
+            <button class="memory" onclick="memorySubtract()">M−</button>
+            <button class="memory" onclick="memoryRecall()">MR</button>
+            <button class="memory" onclick="memoryClear()">MC</button>
+        </div>
+
+        <div class="history-panel">
+            <div class="history-title">History</div>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
